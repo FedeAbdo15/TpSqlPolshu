@@ -8,12 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import com.example.tpsqlpolshu.fragments.InsertarFragment;
+import com.example.tpsqlpolshu.fragments.ListadoFragment;
 
 
 public class MainActivity extends AppCompatActivity {
 
     InsertarFragment insertarFragment;
-    //ListadoFragment listadoFragment;
+    ListadoFragment listadoFragment;
     Button btnListado;
     Button btnInsertar;
 
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         obtenerReferencias();
         CrearFragments();
         setearListeners();
-        //irAFragmentListado();
+        irAFragmentListado();
     }
 
     private void obtenerReferencias(){
@@ -36,15 +37,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void CrearFragments() {
         insertarFragment = new InsertarFragment();
-        //listadoFragment  = new ListadoFragment();
+        listadoFragment  = new ListadoFragment();
     }
 
     private void setearListeners() {
-        //btnListado.setOnClickListener(v -> { irAFragmentListado(); });
+        btnListado.setOnClickListener(v -> { irAFragmentListado(); });
         btnInsertar.setOnClickListener(v -> { irAFragmentInsertar(); });
     }
 
-    //public void irAFragmentListado() { ReemplazarFragment(listadoFragment);}
+    public void irAFragmentListado() { ReemplazarFragment(listadoFragment);}
 
     public void irAFragmentInsertar() {ReemplazarFragment(insertarFragment);}
 
